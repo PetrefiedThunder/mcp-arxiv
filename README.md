@@ -1,19 +1,23 @@
 # mcp-arxiv
 
-MCP server for searching and retrieving academic papers from [arXiv](https://arxiv.org). No API key required.
+Search and retrieve academic preprints from arXiv across physics, CS, math, and more.
+
+> **Free API** — No API key required.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `search_papers` | Search arXiv by query, category, with sorting and pagination |
-| `get_paper` | Get detailed metadata for a paper by arXiv ID |
-| `get_pdf_url` | Get direct PDF download URL for a paper |
-| `list_categories` | List arXiv subject categories |
+| `search_papers` | Search arXiv for academic papers by query. Supports arXiv query syntax (ti:, au:, abs:, cat:, etc.) |
+| `get_paper` | Get detailed metadata for a specific arXiv paper by its ID |
+| `get_pdf_url` | Get the direct PDF download URL for an arXiv paper |
+| `list_categories` | List arXiv subject categories and their descriptions |
 
-## Install
+## Installation
 
 ```bash
+git clone https://github.com/PetrefiedThunder/mcp-arxiv.git
+cd mcp-arxiv
 npm install
 npm run build
 ```
@@ -33,20 +37,11 @@ Add to your `claude_desktop_config.json`:
 }
 ```
 
-## Query Syntax
+## Usage with npx
 
-arXiv supports structured queries:
-- `ti:transformer` — search titles
-- `au:hinton` — search authors
-- `abs:attention mechanism` — search abstracts
-- `cat:cs.AI` — filter by category
-- Combine with `AND`, `OR`, `ANDNOT`
-
-Example: `ti:transformer AND cat:cs.CL`
-
-## Rate Limits
-
-arXiv requires max 1 request per 3 seconds. This is enforced automatically.
+```bash
+npx mcp-arxiv
+```
 
 ## License
 
