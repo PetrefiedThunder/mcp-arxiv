@@ -45,4 +45,4 @@ npx mcp-arxiv
 
 ## License
 
-MIT
+Apache-2.0
